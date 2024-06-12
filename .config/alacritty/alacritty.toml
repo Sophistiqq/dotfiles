@@ -1,0 +1,22 @@
+live_config_reload = true
+
+[window]
+padding = { x = 3, y = 10 }
+blur = true
+opacity = 0.90
+
+[font]
+size = 11
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
+
+[colors]
+primary = { background = "#282c34", foreground = "#f1f1f1" }
+
+
+
+
+
+
