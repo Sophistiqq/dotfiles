@@ -14,7 +14,6 @@ function fish_greeting
 end
 abbr -a -- ghce 'gh copilot explain '
 abbr -a -- ghcs 'gh copilot suggest '
-
 # add to ~/.config/fish/config.fish
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

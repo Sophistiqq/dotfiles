@@ -1,4 +1,14 @@
-//@theme "/home/roi/.local/share/rofi/themes/squared-everforest.rasi"
+/** Basic config file **/
 
-//@theme "/home/roi/.local/share/rofi/themes/rounded-blue-dark.rasi"
-@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-drun: "  ";
+  display-window: "﩯 ";
+  display-combi: "  ";
+}
+//@theme "themes/sidetab-nord.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
