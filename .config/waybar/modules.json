@@ -18,14 +18,18 @@
         }
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
     },
+    "hyprland/window": {
+        "format": "{class}: {title}",
+        "max-length": 40
+    },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -43,7 +47,7 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -84,8 +88,9 @@
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-        "format": "{:%H:%M  |  %B %e} ",
-      "timezone": "Asia/Manila",
+        "format": "{:%I:%M %p  |  %B %e} ",
+        "timezone": "Asia/Manila",
+        "locale": "en_US.UTF-8",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     }
