@@ -52,7 +52,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-	"on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+	"on-click": "sh ~/Scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
 	 
     },
     "cpu": {
@@ -93,6 +93,11 @@
         "locale": "en_US.UTF-8",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "ignore-list": ["Alacritty"]
     }
-
 }

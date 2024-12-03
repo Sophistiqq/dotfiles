@@ -6,12 +6,24 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "palenight",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
+  transparency = true,
+}
+
+M.ui = {
+  cmp = {
+    icons = true,
+    style = "default",
+    enabled = true,
+    completion = {
+      completeopt = "menu,menuone,noinsert",
+    },
+  }
 }
 
 return M

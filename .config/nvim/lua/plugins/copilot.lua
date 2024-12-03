@@ -3,20 +3,16 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    config = function()
+    config = function ()
       require("copilot").setup({
         suggestion = {
-          auto_trigger = true,
           enabled = true,
+          auto_trigger = true,
           debounce = 75,
+          hide_during_completion = false,
           keymap = {
-            accept = "<M-CR>",
-            accept_word = false,
-            accept_line = false,
-            next = "<M-]>",
-            prev = "<M-[>",
-            dismiss = "<C-]>",
-          },
+            accept = "<A-CR>"
+          }
         }
       })
     end

@@ -2,7 +2,7 @@
 [window]
 padding = { x = 3, y = 3 }
 blur = true
-opacity = 0.90
+opacity = 0.80
 
 [font]
 size = 12
