@@ -21,6 +21,9 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  git = {
+    timeout = 1000,
+  },
 
   { import = "plugins" },
 }, lazy_config)

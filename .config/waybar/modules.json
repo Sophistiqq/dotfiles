@@ -2,7 +2,8 @@
     "custom/arch": {
         "format": "󰣇",
         "tooltip": true,
-        "tooltip-format": "btw"
+        "tooltip-format": "btw",
+        "on-click": "wlogout"
     },
 
 

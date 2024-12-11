@@ -2,7 +2,7 @@
 [window]
 padding = { x = 3, y = 3 }
 blur = true
-opacity = 0.80
+opacity = 0.90
 
 [font]
 size = 12
@@ -16,6 +16,34 @@ bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
 live_config_reload = true
 
 
+# Colors (Palenight)
+
+# Default colors
+[colors.primary]
+background = '#292d3e'
+foreground = '#a6accd'
+
+# Normal colors
+[colors.normal]
+black = '#000000'
+red = '#f07178'
+green = '#c3e88d'
+yellow = '#ffcb6b'
+blue = '#82aaff'
+magenta = '#c792ea'
+cyan = '#89ddff'
+white = '#d0d0d0'
+
+# Bright colors
+[colors.bright]
+black = '#434758'
+red = '#ff8b92'
+green = '#ddffa7'
+yellow = '#ffe585'
+blue = '#9cc4ff'
+magenta = '#e1acff'
+cyan = '#a3f7ff'
+white = '#ffffff'
 
 
 
