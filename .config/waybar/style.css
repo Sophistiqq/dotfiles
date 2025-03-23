@@ -9,16 +9,17 @@
 }
 
 window#waybar {
-  background: rgba(40, 40, 40, 0.5);
-  color: #ebdbb2; /* Gruvbox foreground */
-  border-bottom: 2px solid #504945; /* Gruvbox dark gray */
+  /*background: rgba(40, 40, 40, 0.5);*/
+  background: transparent;
+  color: #ebdbb2;
+  /*border-bottom: 2px solid #504945;*/
   transition: background-color 0.5s;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  background: rgba(29, 32, 33, 0.8); /* Gruvbox background */
+  background: rgba(29, 32, 33, 0.8);
   margin: 4px;
   padding: 2px;
   border-radius: 12px;

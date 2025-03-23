@@ -11,4 +11,12 @@ configuration {
 
 //@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
 
-@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+
+//@theme "/home/roi/.local/share/rofi/themes/launchpad.rasi"
+
+//@theme "/home/roi/.local/share/rofi/themes/simple-tokyonight.rasi"
+
+//@theme "/home/roi/.local/share/rofi/themes/windows11-grid-dark.rasi"
+
+@theme "/home/roi/.local/share/rofi/themes/spotlight.rasi"
