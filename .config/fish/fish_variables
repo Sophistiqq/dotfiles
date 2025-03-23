@@ -1,5 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/home/roi/Android/Sdk
+SETUVAR --export ANDROID_SDK_ROOT:/home/roi/Android/Sdk/
+SETUVAR --export JAVA_HOME:/opt/android\x2dstudio/jbr/
+SETUVAR --export NDK_HOME:/home/roi/Android/Sdk/ndk/
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ezzhaolei/transient\x2efish

@@ -1,28 +1,32 @@
 * {
   /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-  font-family: "Fira Code Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Fira Code Nerd Font", "FiraCode Nerd Font", "Symbols Nerd Font",
+    FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  transition: background-color .3s ease-out;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  transition: all 0.3s ease;
 }
 
-
 window#waybar {
-  background: rgba(26, 27, 38, 0.3);
-  color: #c0caf5;
-  border-bottom: 1px solid rgba(100, 114, 125, 1);
-  transition: background-color .5s;
+  background: rgba(40, 40, 40, 0.5);
+  color: #ebdbb2; /* Gruvbox foreground */
+  border-bottom: 2px solid #504945; /* Gruvbox dark gray */
+  transition: background-color 0.5s;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  background: rgba(0, 0, 8, .7);
-  margin: 3px;
-  border-radius: 15px;
+  background: rgba(29, 32, 33, 0.8); /* Gruvbox background */
+  margin: 4px;
+  padding: 2px;
+  border-radius: 12px;
+  border: 1px solid #504945;
 }
 
 .modules-left {
-  padding: 0;
+  padding-left: 5px;
 }
 
 .modules-center {
@@ -33,6 +37,7 @@ window#waybar {
 #battery,
 #cpu,
 #memory,
+#bluetooth,
 #disk,
 #temperature,
 #backlight,
@@ -48,8 +53,11 @@ window#waybar {
 #language,
 #mpd {
   padding: 0 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 5px;
+  background: rgba(60, 56, 54, 0.5); /* Gruvbox dark bg */
+  color: #ebdbb2; /* Gruvbox foreground */
+  border-bottom: 2px solid #3c3836; /* Subtle border */
 }
 
 #clock:hover,
@@ -69,52 +77,137 @@ window#waybar {
 #scratchpad:hover,
 #power-profiles-daemon:hover,
 #language:hover,
+#bluetooth:hover,
 #mpd:hover {
-  background: #142F43;
+  background: #504945; /* Gruvbox medium gray */
+  border-bottom: 2px solid #fabd2f; /* Gruvbox yellow */
+  box-shadow: 0 0 5px rgba(250, 189, 47, 0.4); /* Subtle glow on hover */
 }
-
 
 #workspaces button {
   background: transparent;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 13pt;
-  color: #c0caf5;
+  color: #a89984; /* Gruvbox gray */
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
+  margin: 0 2px;
+  padding: 0 8px;
 }
 
 #workspaces button.active {
-  background: #13131d;
+  background: #282828; /* Gruvbox background */
+  color: #fabd2f; /* Gruvbox yellow */
+  border-bottom: 2px solid #b8bb26; /* Gruvbox green */
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  box-shadow: none;
+  background: #3c3836; /* Gruvbox dark gray */
+  color: #ebdbb2; /* Gruvbox foreground */
+  border-bottom: 2px solid #83a598; /* Gruvbox blue */
 }
 
 #custom-arch {
   margin-left: 5px;
   padding: 0 10px;
-  font-size: 25px;
-  transition: color .5s;
+  font-size: 22px;
+  color: #83a598; /* Gruvbox blue */
+  font-weight: bold;
 }
 
 #custom-arch:hover {
-  color: #1793d1;
+  color: #8ec07c; /* Gruvbox aqua */
+  text-shadow: 0 0 5px rgba(142, 192, 124, 0.5);
 }
 
+/* Add colors to specific modules */
+#battery {
+  color: #b8bb26; /* Gruvbox green */
+}
 
-label.module {
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  font-weight: 900;
-  color: #c0caf5;
+#battery.warning {
+  color: #fabd2f; /* Gruvbox yellow */
+}
+
+#battery.critical {
+  color: #fb4934; /* Gruvbox red */
+  animation: blink 1s infinite alternate;
+}
+
+#cpu {
+  color: #fe8019; /* Gruvbox orange */
+}
+
+#memory {
+  color: #d3869b; /* Gruvbox purple */
+}
+
+#network {
+  color: #83a598; /* Gruvbox blue */
+}
+
+#network.disconnected {
+  color: #fb4934; /* Gruvbox red */
+}
+
+#pulseaudio {
+  color: #8ec07c; /* Gruvbox aqua */
+}
+
+#pulseaudio.muted {
+  color: #fb4934; /* Gruvbox red */
+  text-decoration: line-through;
+}
+
+#clock {
+  color: #fabd2f; /* Gruvbox yellow */
+  font-weight: bold;
+}
+
+#temperature {
+  color: #fe8019; /* Gruvbox orange */
+}
+
+#temperature.critical {
+  color: #fb4934; /* Gruvbox red */
+}
+
+#tray {
+  background: rgba(60, 56, 54, 0.7);
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }
 
 #taskbar {
-  background: rgba(0, 0, 8, .7);
-  border-radius: 15px;
+  background: rgba(29, 32, 33, 0.8);
+  border-radius: 12px;
   margin: 3px;
+  padding: 0 5px;
+}
+
+#taskbar button {
+  padding: 0 8px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  background: rgba(60, 56, 54, 0.6);
+  color: #a89984;
+}
+
+#taskbar button.active {
+  background: #504945;
+  color: #ebdbb2;
+  border-bottom: 2px solid #fabd2f;
+}
+
+@keyframes blink {
+  to {
+    background-color: #fb4934;
+    color: #282828;
+  }
 }

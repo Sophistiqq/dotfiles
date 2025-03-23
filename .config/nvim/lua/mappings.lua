@@ -14,4 +14,5 @@ map("n", "<C-Down>", "<C-w>j", { silent = true })
 map("n", "<C-Up>", "<C-w>k", { silent = true })
 map("n", "<C-Right>", "<C-w>l", { silent = true })
 
-
+-- :CopilotChat
+map("n", "<leader>cc", "<cmd> CopilotChatOpen <cr>", { desc = "Open Copilot Chat" })
