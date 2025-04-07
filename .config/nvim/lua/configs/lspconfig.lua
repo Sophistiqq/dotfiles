@@ -4,7 +4,16 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "vtsls", "svelte", "emmet_language_server" }
+local servers = {
+  "html",
+  "cssls",
+  "vtsls",
+  "svelte",
+  "emmet_language_server",
+  "kotlin_language_server",
+  "tailwindcss",
+  "rust_analyzer",
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -22,3 +31,9 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+lspconfig.rust_analyzer.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+}

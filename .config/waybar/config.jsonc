@@ -14,9 +14,9 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "network",
         "bluetooth",
         "pulseaudio",
-        "network",
         "cpu",
         "memory",
         "temperature",
