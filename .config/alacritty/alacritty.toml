@@ -36,6 +36,3 @@ red = "#cc241d"
 white = "#a89984"
 yellow = "#d79921"
 
-[colors.primary]
-background = "#282828"
-foreground = "#ebdbb2"

@@ -19,4 +19,6 @@ configuration {
 
 //@theme "/home/roi/.local/share/rofi/themes/windows11-grid-dark.rasi"
 
-@theme "/home/roi/.local/share/rofi/themes/spotlight.rasi"
+//@theme "/home/roi/.local/share/rofi/themes/spotlight.rasi"
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

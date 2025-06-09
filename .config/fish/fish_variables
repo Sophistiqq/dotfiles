@@ -4,7 +4,7 @@ SETUVAR --export ANDROID_HOME:/home/roi/Android/Sdk
 SETUVAR --export ANDROID_SDK_ROOT:/home/roi/Android/Sdk/
 SETUVAR --export JAVA_HOME:/opt/android\x2dstudio/jbr/
 SETUVAR --export NDK_HOME:/home/roi/Android/Sdk/ndk/
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ezzhaolei/transient\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
@@ -38,7 +38,7 @@ SETUVAR fish_color_option:d3d0c8
 SETUVAR fish_color_param:d3d0c8
 SETUVAR fish_color_quote:ffcc66
 SETUVAR fish_color_redirection:d3d0c8
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
