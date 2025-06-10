@@ -7,5 +7,6 @@ return {
     { "ibhagwan/fzf-lua" },
   },
   event = "LspAttach",
-  opts = {},
+  opts = {
+  },
 }

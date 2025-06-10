@@ -1,6 +1,8 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
-
+vim.diagnostic.config({
+  virtual_text = false,
+})
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -21,16 +23,20 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  git = {
+    timeout = 1000,
+  },
 
   { import = "plugins" },
 }, lazy_config)
+
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
-require "autocmds"
+require "nvchad.autocmds"
 
 vim.schedule(function()
   require "mappings"
