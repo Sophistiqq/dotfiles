@@ -26,3 +26,6 @@ function setvtrgb
 end
 
 zoxide init fish | source
+
+starship init fish | source
+starship preset jetpack -o ~/.config/jetpack.toml
