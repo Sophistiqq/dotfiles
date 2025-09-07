@@ -1,0 +1,186 @@
+{
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "Click to log out",
+        "on-click": "wlogout",
+        "on-middle-click": "alacritty",
+        "on-right-click": "rofi -show drun"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰾪",
+            "deactivated": "󰾫"
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Idle Inhibitor Active",
+        "tooltip-format-deactivated": "Idle Inhibitor Inactive"
+    },
+    "hyprland/window": {
+        "format": "{class}: {title}",
+        "max-length": 40
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "󰕾",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "󰖁",
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "󰋋",
+            "phone-muted": "󰖁",
+            "portable": "󰋋",
+            "car": "󰋋",
+            "default": ["󰕾", "󰖁", "󰋋"]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "tooltip-format": "Device: {desc}\nVolume: {volume}%"
+    },
+    "bluetooth": {
+        "format": "{icon} {status}",
+        "format-connected": "{icon} {device_alias}",
+        "format-connected-battery": "{icon} {device_alias} {device_battery_percentage}%",
+        "format-icons": {
+            "connected": "󰂯",
+            "disconnected": "󰂲",
+            "default": "󰂱"
+        },
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager",
+        "on-click-right": "rfkill toggle bluetooth"
+    },
+    "network": {
+        "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰤥 {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}\nSignal: {signalStrength}%\nFrequency: {frequency}GHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "format-linked": "󰤭 {ifname} (No IP)",
+        "format-disconnected": "󰤫 Disconnected",
+        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "interval": 5,
+        "on-click": "sh ~/.config/rofi-wifi/rofi-wifi-menu.sh",
+        "on-click-right": "nm-connection-editor"
+    },
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%\nLoad: {load}\nAvg Frequency: {avg_frequency}GHz",
+        "on-click": "alacritty -e htop"
+    },
+    "memory": {
+        "format": "󰍛 {percentage}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "Memory: {used:0.1f}GB/{total:0.1f}GB\nSwap: {swapUsed:0.1f}GB/{swapTotal:0.1f}GB",
+        "on-click": "alacritty -e htop"
+    },
+    "temperature": {
+        "interval": 5,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 85,
+        "format-critical": "󰔅 {temperatureC}°C",
+        "format": "󰔅 {temperatureC}°C",
+        "tooltip-format": "CPU Temperature: {temperatureC}°C"
+    },
+    "hyprland/language": {
+        "format": "󰉿 {}",
+        "format-en": "EN",
+        "format-ru": "RU",
+        "on-click": "hyprctl switchxkblayout -n"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "󰂄 {icon} {capacity}%",
+        "format-full": "󰂄 {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "󰂄 {icon} {time}",
+        "format-icons": ["󰂄", "󰂅", "󰂆", "󰂇", "󰂈"],
+        "interval": 10,
+        "tooltip-format": "Battery: {capacity}%\nTime remaining: {time}\nPower draw: {power}W"
+    },
+    "clock": {
+        "format": "{:%I:%M %p  |  %B %e} ",
+        "timezone": "Asia/Manila",
+        "locale": "en_US.UTF-8",
+        "tooltip-format": "<big>󰥔 {:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "󰥔 {:%Y-%m-%d}",
+        "calendar": {
+            "mode": "month",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#d79921'><b>󰥔 {}</b></span>",
+                "days": "<span color='#ebdbb2'>󰥔 {}</span>",
+                "weeks": "<span color='#fe8019'><b>W{}</b></span>",
+                "weekdays": "<span color='#b8bb26'><b>󰥔 {}</b></span>",
+                "today": "<span color='#fb4934'><b>󰥔 {}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Papirus-Dark",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "minimize",
+        "all-outputs": true,
+        "ignore-list": ["Alacritty"],
+        "tooltip-format": "{title}"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='#d79921'></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='#fb4934'></span>",
+            "dnd-none": "<span foreground='#fb4934'></span>"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }
+}

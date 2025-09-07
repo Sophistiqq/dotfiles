@@ -1,0 +1,20 @@
+#!/bin/bash
+
+INTERFACE="wlan0"  # Change if needed
+
+# Scan for networks
+iwctl station "$INTERFACE" scan > /dev/null
+sleep 2
+
+# Extract SSIDs from column 0 to 32 (approx SSID width) from row 5 onward
+NETWORKS=$(iwctl station "$INTERFACE" get-networks | tail -n +5 | cut -c1-32 | sed 's/\x1b\[[0-9;]*m//g' | sed 's/ *$//' | sort -u)
+
+# Show in rofi
+CHOSEN=$(echo "$NETWORKS" | rofi -dmenu -p "Wi-Fi")
+
+if [[ -n "$CHOSEN" ]]; then
+    PASSWORD=$(rofi -dmenu -password -p "Password for $CHOSEN")
+    if [[ -n "$PASSWORD" ]]; then
+        iwctl --passphrase "$PASSWORD" station "$INTERFACE" connect "$CHOSEN"
+    fi
+fi

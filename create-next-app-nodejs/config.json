@@ -1,0 +1,11 @@
+{
+	"preferences": {
+		"typescript": true,
+		"linter": "biome",
+		"eslint": false,
+		"tailwind": true,
+		"srcDir": false,
+		"app": true,
+		"turbopack": true
+	}
+}

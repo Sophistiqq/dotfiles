@@ -1,0 +1,16 @@
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular"}
+italic = { family = "MonaspiceRn Nerd Font", style = "Italic" }
+bold = { family = "MonaspiceKr Nerd Font", style = "Bold" }
+bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic" }
+size = 8
+
+
+[window]
+padding = { x = 3, y = 5 }
+opacity = 0.9
+blur = true
+dynamic_title = true
+
+[general]
+live_config_reload = true
