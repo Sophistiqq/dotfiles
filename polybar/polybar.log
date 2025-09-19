@@ -1,0 +1,50 @@
+polybar|notice:  Parsing config file: /home/roi/.config/polybar/config.ini
+polybar|notice:  Listening for IPC messages (PID: 12543)
+polybar|warn:  No monitor specified, using "DP-1"
+polybar|notice:  Loading module 'rofi' of type 'custom/text'
+polybar|warn:  The config parameter `module/rofi.content` is deprecated, use `module/rofi.format` instead.
+polybar|notice:  Loading module 'i3' of type 'internal/i3'
+polybar|notice:  Loading module 'xwindow' of type 'internal/xwindow'
+polybar|notice:  Loading module 'mpd' of type 'internal/mpd'
+polybar|notice:  Loading module 'date' of type 'internal/date'
+polybar|notice:  Loading module 'network' of type 'internal/network'
+polybar|notice:  module/network: Discovered wireless interface wlan1
+polybar|notice:  Loading module 'pulseaudio' of type 'internal/pulseaudio'
+polybar|notice:  pulseaudio: using default sink bluez_output.41_42_BB_08_D8_DA.1
+polybar|notice:  Loading module 'memory' of type 'internal/memory'
+polybar|notice:  Loading module 'record' of type 'custom/script'
+polybar|notice:  Loading module 'redshift' of type 'custom/script'
+polybar|notice:  Loading module 'brightness' of type 'custom/script'
+polybar|notice:  Loading module 'menu-power' of type 'custom/menu'
+polybar|notice:  Loaded 12 modules
+polybar|notice:  Loaded font "Nikkyou Sans:size=10" (name=Nikkyou Sans, offset=0, file=/home/roi/.local/share/fonts/NikkyouSans-mLKax.ttf)
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '窱' (U+faac) in '  窱 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.668': errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x15: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.668': errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x15: errno 22 (Invalid argument))
+polybar|warn:  Dropping unmatched character '磌' (U+faab) in '  磌 KuyaEric PisoWiFi'
+polybar|warn:  Dropping unmatched character '' (U+f026) in ' 33%'
+polybar|notice:  Received signal(15): Terminated
+polybar|notice:  Termination signal received, shutting down...

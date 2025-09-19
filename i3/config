@@ -13,7 +13,9 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is specified later.
-font pango:monospace 8
+# Monaspice
+# font pango:monospace 8
+font pango:Monaspice 8
 
 # The modifier key to be used for most keybindings.
 # Your Hyprland config used the Super key (Windows key).
@@ -148,6 +150,11 @@ bindsym Print exec flameshot full -p ~/Pictures/
 # Window screenshot
 bindsym $mod+Shift+Print exec flameshot gui --last-region
 
+# Open rofimoji and put it in the clipboard 
+bindsym $mod+Shift+e exec rofi -modi emoji -show emoji
+
+
+
 # Multimedia keys (these should work out-of-the-box if you have wpctl)
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
@@ -189,15 +196,16 @@ bindsym $mod+r mode "resize"
 # 'hyprpaper' is for Wayland. A popular X11 alternative is 'feh'.
 #
 # Example: exec --no-startup-id feh --bg-scale /path/to/your/wallpaper.png
-exec --no-startup-id feh --bg-scale ~/Pictures/1391865.png
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/japanese_aesthetic.png
 
 # Start a compositor for transparency, shadows, etc.
 exec --no-startup-id picom 
+exec_always --no-startup-id autotiling
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Enable tap-to-touch for touchpad
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
 bindsym $mod+w exec --no-startup-id ~/.config/polybar/toggle.sh
-
+bindsym $mod+Shift+f exec chromium https://www.facebook.com
 

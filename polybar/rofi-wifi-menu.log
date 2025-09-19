@@ -1,0 +1,137 @@
++ DEVICE=wlan0
++ POSITION=0
++ Y_OFF=0
++ X_OFF=0
++ FONT='FiraCode Nerd Font 11'
++ iwctl station wlan0 scan
+++ iwctl station wlan0 show
+++ sed -n 's/^\s*Connected\snetwork\s*\(\S*\)\s*$/\1/p'
++ CURR_SSID=
+++ iwctl station wlan0 get-networks
+++ sed '/^--/d'
++ IW_NETWORKS+=$'                               Available networks\E[1;90m                              \E[0m\n\E[90m--------------------------------------------------------------------------------\n\E[0m\E[1;90m      Network name                      Security            Signal\n\E[0m\E[90m--------------------------------------------------------------------------------\n\E[0m  \E[1;90m> \E[0m  KuyaEric PisoWiFi                 open                ****    \n      JASMINE SALAS                     psk                 ***\E[1;90m*\E[0m    \n      GFiber_2.4_Coverage_78E2D         psk                 **\E[1;90m**\E[0m    '
+++ echo $'                               Available networks\E[1;90m                              \E[0m\n\E[90m--------------------------------------------------------------------------------\n\E[0m\E[1;90m      Network name                      Security            Signal\n\E[0m\E[90m--------------------------------------------------------------------------------\n\E[0m  \E[1;90m> \E[0m  KuyaEric PisoWiFi                 open                ****    \n      JASMINE SALAS                     psk                 ***\E[1;90m*\E[0m    \n      GFiber_2.4_Coverage_78E2D         psk                 **\E[1;90m**\E[0m    '
+++ sed 1,4d
++ IW_NETWORKS=$'\E[0m  \E[1;90m> \E[0m  KuyaEric PisoWiFi                 open                ****    \n      JASMINE SALAS                     psk                 ***\E[1;90m*\E[0m    \n      GFiber_2.4_Coverage_78E2D         psk                 **\E[1;90m**\E[0m    '
+++ echo $'\E[0m  \E[1;90m> \E[0m  KuyaEric PisoWiFi                 open                ****    \n      JASMINE SALAS                     psk                 ***\E[1;90m*\E[0m    \n      GFiber_2.4_Coverage_78E2D         psk                 **\E[1;90m**\E[0m    '
+++ sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g'
++ IW_NETWORKS=$'  >   KuyaEric PisoWiFi                 open                ****    \n      JASMINE SALAS                     psk                 ****    \n      GFiber_2.4_Coverage_78E2D         psk                 ****    '
++ IFS=$'\n'
++ PREFIX=$'SSID                              SECURITY  \n'
++ NETWORK_LIST=
++ IFS=
++ read -r line
++ line='  KuyaEric PisoWiFi                 open                ****    '
+++ echo '  KuyaEric PisoWiFi                 open                ****    '
+++ sed 's/\(\s*psk.*\)//'
++ SSID_NAME='  KuyaEric PisoWiFi                 open                ****    '
++ printf -v pad %34s
++ line='  KuyaEric PisoWiFi                 open                ****                                      '
++ line='  KuyaEric PisoWiFi               '
++ line+=PSK
++ printf -v pad %45s
++ line='  KuyaEric PisoWiFi               PSK                                             '
++ line='  KuyaEric PisoWiFi               PSK        '
++ line+=$'\n'
++ '[' '  KuyaEric PisoWiFi                 open                ****    ' = '' ']'
++ NETWORK_LIST+=$'  KuyaEric PisoWiFi               PSK        \n'
++ IFS=
++ read -r line
++ line='  JASMINE SALAS                     psk                 ****    '
+++ echo '  JASMINE SALAS                     psk                 ****    '
+++ sed 's/\(\s*psk.*\)//'
++ SSID_NAME='  JASMINE SALAS'
++ printf -v pad %34s
++ line='  JASMINE SALAS                                  '
++ line='  JASMINE SALAS                   '
++ line+=PSK
++ printf -v pad %45s
++ line='  JASMINE SALAS                   PSK                                             '
++ line='  JASMINE SALAS                   PSK        '
++ line+=$'\n'
++ '[' '  JASMINE SALAS' = '' ']'
++ NETWORK_LIST+=$'  JASMINE SALAS                   PSK        \n'
++ IFS=
++ read -r line
++ line='  GFiber_2.4_Coverage_78E2D         psk                 ****    '
+++ echo '  GFiber_2.4_Coverage_78E2D         psk                 ****    '
+++ sed 's/\(\s*psk.*\)//'
++ SSID_NAME='  GFiber_2.4_Coverage_78E2D'
++ printf -v pad %34s
++ line='  GFiber_2.4_Coverage_78E2D                                  '
++ line='  GFiber_2.4_Coverage_78E2D       '
++ line+=PSK
++ printf -v pad %45s
++ line='  GFiber_2.4_Coverage_78E2D       PSK                                             '
++ line='  GFiber_2.4_Coverage_78E2D       PSK        '
++ line+=$'\n'
++ '[' '  GFiber_2.4_Coverage_78E2D' = '' ']'
++ NETWORK_LIST+=$'  GFiber_2.4_Coverage_78E2D       PSK        \n'
++ IFS=
++ read -r line
+++ echo $'SSID                              SECURITY  \n'
+++ sed '$d'
++ IW_NETWORKS='SSID                              SECURITY  '
++ [[ ! -z '' ]]
+++ iwctl station wlan0 show
++ CON_STATE=$'                                 Station: wlan0\E[1;90m                                \E[0m\n\E[90m--------------------------------------------------------------------------------\n\E[0m\E[1;90m  Settable  Property              Value                                          \n\E[0m\E[90m--------------------------------------------------------------------------------\n\E[0m            Scanning              yes                                              \n            State                 connected                                        \n            Connected network     KuyaEric PisoWiFi                                \n            IPv4 address          10.0.23.245                                      \n            ConnectedBss          84:06:fa:ad:65:00                                \n            Frequency             5680                                             \n            Channel               136                                              \n            Security              Open                                             \n            RSSI                  -30 dBm                                          \n            AverageRSSI           -27 dBm                                          \n            RxMode                802.11ac                                         \n            RxMCS                 8                                                \n            TxMode                802.11ac                                         \n            TxMCS                 8                                                \n            TxBitrate             360000 Kbit/s                                    \n            RxBitrate             324000 Kbit/s                                    '
++ [[                                  Station: wlan0[1;90m                                [0m
+[90m--------------------------------------------------------------------------------
+[0m[1;90m  Settable  Property              Value                                          
+[0m[90m--------------------------------------------------------------------------------
+[0m            Scanning              yes                                              
+            State                 connected                                        
+            Connected network     KuyaEric PisoWiFi                                
+            IPv4 address          10.0.23.245                                      
+            ConnectedBss          84:06:fa:ad:65:00                                
+            Frequency             5680                                             
+            Channel               136                                              
+            Security              Open                                             
+            RSSI                  -30 dBm                                          
+            AverageRSSI           -27 dBm                                          
+            RxMode                802.11ac                                         
+            RxMCS                 8                                                
+            TxMode                802.11ac                                         
+            TxMCS                 8                                                
+            TxBitrate             360000 Kbit/s                                    
+            RxBitrate             324000 Kbit/s                                     =~  connected ]]
++ MENU='disconnect from \nmanually connect to a network\nSSID                              SECURITY  '
+++ echo 'SSID                              SECURITY  '
+++ head -n 1
+++ awk '{print length($0); }'
++ R_WIDTH=49
+++ echo 'SSID                              SECURITY  '
+++ wc -l
++ LINE_COUNT=1
++ [[                                  Station: wlan0[1;90m                                [0m
+[90m--------------------------------------------------------------------------------
+[0m[1;90m  Settable  Property              Value                                          
+[0m[90m--------------------------------------------------------------------------------
+[0m            Scanning              yes                                              
+            State                 connected                                        
+            Connected network     KuyaEric PisoWiFi                                
+            IPv4 address          10.0.23.245                                      
+            ConnectedBss          84:06:fa:ad:65:00                                
+            Frequency             5680                                             
+            Channel               136                                              
+            Security              Open                                             
+            RSSI                  -30 dBm                                          
+            AverageRSSI           -27 dBm                                          
+            RxMode                802.11ac                                         
+            RxMCS                 8                                                
+            TxMode                802.11ac                                         
+            TxMCS                 8                                                
+            TxBitrate             360000 Kbit/s                                    
+            RxBitrate             324000 Kbit/s                                     =~  connected ]]
++ LINE_COUNT=12
+++ echo -e 'disconnect from \nmanually connect to a network\nSSID                              SECURITY  '
+++ uniq -u
+++ /usr/bin/rofi -dmenu -p 'WiFi SSID' -lines 12 -a '' -location 0 -yoffset 0 -xoffset 0 -font 'FiraCode Nerd Font 11' -width -49
++ CHENTRY=
+++ echo ''
+++ sed 's/\s\{2,\}/\|/g'
+++ awk -F '|' '{print $1}'
++ CHSSID=
++ '[' '' = 'manually connect to a network' ']'
++ [[ '' =~ disconnect from  ]]
++ '[' '' '!=' '' ']'

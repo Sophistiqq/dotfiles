@@ -9,7 +9,11 @@ set -u fish_greeting ""
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-set -gx ANDROID_HOME /opt/android-sdk/
-# platform-tools like adb
-set -gx PATH /opt/android-sdk/platform-tools $PATH
-set -gx ANDROID_SDK_ROOT /opt/android-sdk/platform-tools
+set -gx ANDROID_HOME "/home/roi/Android/Sdk"
+# set it to path
+# set -gx ANDROID_SDK_ROOT "/home/roi/Android/Sdk/cmdline-tools/latest/bin"
+set -gx ANDROID_SDK_ROOT "/home/roi/Android/Sdk/cmdline-tools/latest"
+# put it to path
+set -gx PATH $ANDROID_SDK_ROOT $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $PATH
+
+fish_add_path /home/roi/.spicetify

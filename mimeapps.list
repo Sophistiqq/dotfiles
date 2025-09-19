@@ -1,7 +1,7 @@
 [Default Applications]
-text/html=userapp-Waterfox-5WTAC3.desktop
-x-scheme-handler/http=userapp-Waterfox-5WTAC3.desktop
-x-scheme-handler/https=userapp-Waterfox-5WTAC3.desktop
+text/html=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
 x-scheme-handler/chrome=userapp-Waterfox-5WTAC3.desktop
@@ -11,6 +11,7 @@ application/x-extension-shtml=userapp-Waterfox-5WTAC3.desktop
 application/xhtml+xml=userapp-Waterfox-5WTAC3.desktop
 application/x-extension-xhtml=userapp-Waterfox-5WTAC3.desktop
 application/x-extension-xht=userapp-Waterfox-5WTAC3.desktop
+x-scheme-handler/polypane=Polypane.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Waterfox-5WTAC3.desktop;xfce4-web-browser.desktop;
@@ -23,3 +24,4 @@ application/x-extension-shtml=userapp-Waterfox-5WTAC3.desktop;
 application/xhtml+xml=userapp-Waterfox-5WTAC3.desktop;
 application/x-extension-xhtml=userapp-Waterfox-5WTAC3.desktop;
 application/x-extension-xht=userapp-Waterfox-5WTAC3.desktop;
+application/x-shellscript=Alacritty.desktop;

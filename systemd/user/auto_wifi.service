@@ -1,0 +1,11 @@
+[Unit]
+Description=Auto WiFi MAC Address
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/auto_wifi.sh
+
+[Install]
+WantedBy=default.target
+

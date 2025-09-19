@@ -3,7 +3,7 @@ normal = { family = "FiraCode Nerd Font", style = "Regular"}
 italic = { family = "MonaspiceRn Nerd Font", style = "Italic" }
 bold = { family = "MonaspiceKr Nerd Font", style = "Bold" }
 bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic" }
-size = 8
+size = 11
 
 
 [window]
