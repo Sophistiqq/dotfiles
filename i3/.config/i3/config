@@ -23,7 +23,7 @@ set $mod Mod4
 
 # Your preferred applications from hyprland.conf
 set $terminal alacritty
-set $fileManager thunar
+set $fileManager nautilus
 set $menu rofi -show drun
 set $browser chromium
 
@@ -49,16 +49,16 @@ gaps outer 2
 # client.focused_inactive #595959 #222222     #888888
 
 # Active window border color (approximated from your gradient)
-set $color_active_border #33ccff
+set $color_active_border #7FBBB3
 # Inactive window border color
-set $color_inactive_border #595959
+set $color_inactive_border #2E383C
 
 # Window colors
 # class                 border  bground text    indicator child_border
-client.focused          $color_active_border $color_active_border #ffffff $color_active_border $color_active_border
-client.unfocused        $color_inactive_border #222222 #888888 $color_inactive_border $color_inactive_border
-client.focused_inactive $color_inactive_border #222222 #888888 $color_inactive_border $color_inactive_border
-client.urgent           #2f343a #900000 #ffffff #900000 #900000
+client.focused          $color_active_border $color_active_border #D3C6AA $color_active_border $color_active_border
+client.unfocused        $color_inactive_border #272E33 #859289 $color_inactive_border $color_inactive_border
+client.focused_inactive $color_inactive_border #272E33 #859289 $color_inactive_border $color_inactive_border
+client.urgent           #E67E80 #E67E80 #D3C6AA #E67E80 #E67E80
 
 # NOTE on aesthetics:
 # Hyprland has a built-in compositor for blur, rounding, and shadows.
@@ -196,7 +196,7 @@ bindsym $mod+r mode "resize"
 # 'hyprpaper' is for Wayland. A popular X11 alternative is 'feh'.
 #
 # Example: exec --no-startup-id feh --bg-scale /path/to/your/wallpaper.png
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/japanese_aesthetic.png
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/13977432.jpg
 
 # Start a compositor for transparency, shadows, etc.
 exec --no-startup-id picom 
@@ -208,4 +208,6 @@ exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tappin
 
 bindsym $mod+w exec --no-startup-id ~/.config/polybar/toggle.sh
 bindsym $mod+Shift+f exec chromium https://www.facebook.com
+bindsym $mod+Shift+g exec chromium https://www.gmail.com
+bindsym $mod+Shift+l exec chromium http://10.0.23.245:3000/swagger
 

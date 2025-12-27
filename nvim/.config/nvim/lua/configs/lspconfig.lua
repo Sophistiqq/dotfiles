@@ -5,8 +5,6 @@ local servers = {
   "html",
   "cssls",
   "emmet_language_server",
-  "roslyn_ls",
-  "omnisharp"
 }
 
 vim.lsp.enable(servers)

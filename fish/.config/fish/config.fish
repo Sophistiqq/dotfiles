@@ -17,3 +17,6 @@ set -gx ANDROID_SDK_ROOT "/home/roi/Android/Sdk/cmdline-tools/latest"
 set -gx PATH $ANDROID_SDK_ROOT $ANDROID_SDK_ROOT/platform-tools $ANDROID_SDK_ROOT/emulator $PATH
 
 fish_add_path /home/roi/.spicetify
+
+# Created by `pipx` on 2025-11-17 08:51:26
+set PATH $PATH /home/roi/.local/bin

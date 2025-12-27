@@ -14,7 +14,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.softtabstop = 2
 o.tabstop = 2
-o.signcolumn = "no"
+o.signcolumn = "yes"
 o.winborder = "single"
 o.smartindent = true
 o.termguicolors = true
@@ -28,5 +28,3 @@ vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 
 ----- [ Highlights ] -----
--- set bold to current line number
-vim.cmd("hi! CursorLineNr cterm=bold gui=bold")
