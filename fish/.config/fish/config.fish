@@ -20,3 +20,8 @@ fish_add_path /home/roi/.spicetify
 
 # Created by `pipx` on 2025-11-17 08:51:26
 set PATH $PATH /home/roi/.local/bin
+
+
+set -gx DOTNET_ROOT "/usr/share/dotnet/"
+# Tools
+set -gx PATH "$DOTNET_ROOT/tools" "$PATH"
