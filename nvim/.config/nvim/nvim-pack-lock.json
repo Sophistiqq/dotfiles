@@ -44,6 +44,10 @@
       "rev": "d9e44e54384e5b0f3536339c65484f2e41b528e3",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-scrollbar": {
+      "rev": "f8e87b96cd6362ef8579be456afee3b38fd7e2a8",
+      "src": "https://github.com/petertriho/nvim-scrollbar"
+    },
     "nvim-tree.lua": {
       "rev": "eb33612bff2fb31f54946fb5dcadc89e905e81ec",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
@@ -63,6 +67,10 @@
     "precognition.nvim": {
       "rev": "2aae2687207029b3611a0e19a289f9e1c7efbe16",
       "src": "https://github.com/tris203/precognition.nvim"
+    },
+    "showkeys": {
+      "rev": "cb0a50296f11f1e585acffba8c253b9e8afc1f84",
+      "src": "https://github.com/nvzone/showkeys"
     },
     "smear-cursor.nvim": {
       "rev": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199",

@@ -5,6 +5,7 @@ local servers = {
   "html",
   "cssls",
   "emmet_language_server",
+  "qmlls"
 }
 
 vim.lsp.enable(servers)

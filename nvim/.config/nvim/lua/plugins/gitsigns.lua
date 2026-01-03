@@ -3,5 +3,4 @@ vim.pack.add({
 })
 
 require('gitsigns').setup({
-
 })
