@@ -17,7 +17,6 @@ o.tabstop = 2
 o.signcolumn = "yes"
 o.winborder = "single"
 o.smartindent = true
-o.termguicolors = true
 o.clipboard = "unnamedplus"
 o.fillchars = { eob = " " }
 o.laststatus = 3
@@ -27,4 +26,4 @@ o.whichwrap:append("<,>,h,l")
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 
------ [ Highlights ] -----
+----- [ Colorscheme ] -----

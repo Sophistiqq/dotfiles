@@ -7,6 +7,8 @@ map("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind Words" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind Help tags" })
 map("n", "<leader>fq", builtin.quickfix, { desc = "[F]ind Quickfix" })
 map("n", "<leader>fq", builtin.diagnostics, { desc = "[F]ind Diagnostics" })
+map("n", "<leader>th", builtin.colorscheme, { desc = "[F]ind Colorscheme" })
+
 map("n", "<C-Space>", builtin.buffers, { desc = "[F]ind Buffers" })
 map("n", "<Tab>", ":bn<CR>", { desc = "Next Buffer", silent = true, noremap = true })
 map("n", "<S-Tab>", ":bp<CR>", { desc = "Previous Buffer", silent = true, noremap = true })
