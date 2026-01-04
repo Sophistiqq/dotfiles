@@ -80,6 +80,10 @@
       "rev": "2aae2687207029b3611a0e19a289f9e1c7efbe16",
       "src": "https://github.com/tris203/precognition.nvim"
     },
+    "roslyn.nvim": {
+      "rev": "4ce6030c82c40b2bee1b6ce1292121ef8354f3a6",
+      "src": "https://github.com/seblyng/roslyn.nvim"
+    },
     "showkeys": {
       "rev": "cb0a50296f11f1e585acffba8c253b9e8afc1f84",
       "src": "https://github.com/nvzone/showkeys"
