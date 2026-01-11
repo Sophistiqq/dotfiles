@@ -26,7 +26,7 @@
     },
     "floaterm": {
       "rev": "fc2efaf25eeefcb33177d5807c0c745e125cf293",
-      "src": "https://github.com/nvzone/floaterm.git"
+      "src": "https://github.com/nvzone/floaterm"
     },
     "friendly-snippets": {
       "rev": "572f5660cf05f8cd8834e096d7b4c921ba18e175",
@@ -110,7 +110,7 @@
     },
     "volt": {
       "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
-      "src": "https://github.com/nvzone/volt.git"
+      "src": "https://github.com/nvzone/volt"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

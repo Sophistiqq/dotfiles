@@ -5,7 +5,8 @@ local servers = {
   "html",
   "cssls",
   "emmet_language_server",
-  "qmlls"
+  "qmlls",
+  "prismals",
 }
 
 vim.lsp.config("roslyn", {

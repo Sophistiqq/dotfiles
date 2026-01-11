@@ -1,8 +1,18 @@
-vim.pack.add({ { src = "https://github.com/akinsho/toggleterm.nvim" } })
-require("toggleterm").setup({})
+vim.pack.add({
+  { src = "https://github.com/nvzone/floaterm" },
+  { src = "https://github.com/nvzone/volt" },
+})
 
+require("floaterm").setup({
+  size = { h = 80, w = 90 },
+  mappings = {
+    term = function(buf)
+      vim.keymap.set({ "n", "t" }, "<C-Tab>", function()
+        require("floaterm.api").cycle_term_bufs "prev"
+      end, { buffer = buf })
+    end,
+  }
+})
 
-vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { silent = true })
-vim.keymap.set({ "n", "t" }, "<M-v>", [[<C-\><C-n>:ToggleTerm direction=vertical size=50<CR>]], { silent = true })
-vim.keymap.set({ "n", "t" }, "<M-h>", [[<C-\><C-n>:ToggleTerm direction=horizontal<CR>]], { silent = true })
-vim.keymap.set({ "n", "t" }, "<M-i>", [[<C-\><C-n>:ToggleTerm direction=float<CR>]], { silent = true })
+vim.keymap.set("n", "<C-`>", ":FloatermToggle<CR>")
+vim.keymap.set("t", "<C-`>", "<C-\\><C-n>:FloatermToggle<CR>")
