@@ -22,6 +22,8 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", noremap 
 map("n", "<leader>gt", ":LazyGit<CR>", { desc = "LazyGit UI", noremap = true })
 map("n", "<M-z>", ":set wrap!<CR>", { desc = "Toggle Wrap", noremap = true, silent = true })
 map("n", "<Esc>", ":noh<CR><Esc>", { desc = "Clear Highlight", noremap = true, silent = true })
+map("n", "<leader>/", "gcc", { remap = true, silent = true })
+map("v", "<leader>/", "gc",  { remap = true, silent = true })
 
 -- NvimTree
 map("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { silent = true, noremap = true })
