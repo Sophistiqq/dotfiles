@@ -23,7 +23,7 @@ map("n", "<leader>gt", ":LazyGit<CR>", { desc = "LazyGit UI", noremap = true })
 map("n", "<M-z>", ":set wrap!<CR>", { desc = "Toggle Wrap", noremap = true, silent = true })
 map("n", "<Esc>", ":noh<CR><Esc>", { desc = "Clear Highlight", noremap = true, silent = true })
 map("n", "<leader>/", "gcc", { remap = true, silent = true })
-map("v", "<leader>/", "gc",  { remap = true, silent = true })
+map("v", "<leader>/", "gc", { remap = true, silent = true })
 
 -- NvimTree
 map("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { silent = true, noremap = true })
@@ -36,3 +36,10 @@ map("v", "<C-f>", "zf", { desc = "zf", noremap = true, silent = true })
 
 -- toggle relative number
 map("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number", noremap = true })
+
+
+-- Map C- left right up down to be the same as the arrow keys
+map("n", "<C-Left>", "<C-w>h", { desc = "Move Left", noremap = true, silent = true })
+map("n", "<C-Right>", "<C-w>l", { desc = "Move Right", noremap = true, silent = true })
+map("n", "<C-Up>", "<C-w>k", { desc = "Move Up", noremap = true, silent = true })
+map("n", "<C-Down>", "<C-w>j", { desc = "Move Down", noremap = true, silent = true })

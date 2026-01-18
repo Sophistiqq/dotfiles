@@ -14,5 +14,5 @@ require("floaterm").setup({
   }
 })
 
-vim.keymap.set("n", "<C-`>", ":FloatermToggle<CR>")
-vim.keymap.set("t", "<C-`>", "<C-\\><C-n>:FloatermToggle<CR>")
+vim.keymap.set("n", "<C-`>", ":FloatermToggle<CR>", { silent = true })
+vim.keymap.set("t", "<C-`>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true })
