@@ -15,7 +15,7 @@
 # is specified later.
 # Monaspice
 # font pango:monospace 8
-font pango:Monaspice 8
+font pango:Monaspice 5
 
 # The modifier key to be used for most keybindings.
 # Your Hyprland config used the Super key (Windows key).
@@ -37,8 +37,8 @@ new_window pixel 1
 
 # Gaps
 # Your Hyprland config had gaps_in = 5 and gaps_out = 10.
-gaps inner 2
-gaps outer 2
+gaps inner 5
+gaps outer 1
 
 # Colors
 # These are translated from your Hyprland active/inactive border colors.
