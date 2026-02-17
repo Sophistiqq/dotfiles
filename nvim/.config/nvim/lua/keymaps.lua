@@ -43,3 +43,7 @@ map("n", "<C-Left>", "<C-w>h", { desc = "Move Left", noremap = true, silent = tr
 map("n", "<C-Right>", "<C-w>l", { desc = "Move Right", noremap = true, silent = true })
 map("n", "<C-Up>", "<C-w>k", { desc = "Move Up", noremap = true, silent = true })
 map("n", "<C-Down>", "<C-w>j", { desc = "Move Down", noremap = true, silent = true })
+
+map("n", "<leader>ih", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
