@@ -32,12 +32,11 @@ set $browser chromium
 # -----------------------------------------------------------------------------
 
 # Window borders (new_window)
-# Your Hyprland config had a border_size of 1.
-new_window pixel 1
+default_border pixel 1
 
 # Gaps
 # Your Hyprland config had gaps_in = 5 and gaps_out = 10.
-gaps inner 5
+gaps inner 2
 gaps outer 1
 
 # Colors
@@ -196,17 +195,18 @@ bindsym $mod+r mode "resize"
 # 'hyprpaper' is for Wayland. A popular X11 alternative is 'feh'.
 #
 # Example: exec --no-startup-id feh --bg-scale /path/to/your/wallpaper.png
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/plant.jpg
-
+exec --no-startup-id nitrogen --restore
 # Start a compositor for transparency, shadows, etc.
 exec --no-startup-id picom 
 exec_always --no-startup-id autotiling
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+bindsym $mod+w exec --no-startup-id ~/.config/polybar/toggle.sh
+
 
 # Enable tap-to-touch for touchpad
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
-bindsym $mod+w exec --no-startup-id ~/.config/polybar/toggle.sh
 bindsym $mod+Shift+f exec chromium https://www.facebook.com
 bindsym $mod+Shift+g exec chromium https://www.gmail.com
 bindsym $mod+Shift+l exec chromium http://10.0.23.245:3000/swagger

@@ -11,6 +11,7 @@ padding = { x = 3, y = 5 }
 opacity = 0.8
 blur = true
 dynamic_title = true
+decorations = "none"
 
 [general]
 live_config_reload = true

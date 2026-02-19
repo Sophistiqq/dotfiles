@@ -7,6 +7,7 @@ local servers = {
   "emmet_language_server",
   "qmlls",
   "prismals",
+  "rust_analyzer"
 }
 
 vim.lsp.config("roslyn", {
@@ -28,6 +29,18 @@ vim.lsp.enable('roslyn_ls')
 vim.lsp.config("rust_analyzer", {
   settings = {
     ["rust_analyzer"] = {
+      inlayHints = {
+        typeHints = { enable = true },
+        parameterHints = { enable = true },
+        closingBraceHints = { enable = true, minLines = 25 },
+      }
+    }
+  }
+})
+
+vim.lsp.config("ts_ls", {
+  settings = {
+    ["ts_ls"] = {
       inlayHints = {
         typeHints = { enable = true },
         parameterHints = { enable = true },
