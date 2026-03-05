@@ -200,9 +200,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom 
 exec_always --no-startup-id autotiling
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/toggle.sh
 bindsym $mod+w exec --no-startup-id ~/.config/polybar/toggle.sh
-
+exec --no-startup-id dunst
 
 # Enable tap-to-touch for touchpad
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
