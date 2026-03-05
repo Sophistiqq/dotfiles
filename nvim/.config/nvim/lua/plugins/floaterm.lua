@@ -10,6 +10,10 @@ require("floaterm").setup({
       vim.keymap.set({ "n", "t" }, "<C-Tab>", function()
         require("floaterm.api").cycle_term_bufs "prev"
       end, { buffer = buf })
+
+      vim.keymap.set({ "n", "t" }, "<C-n>", function()
+        require("floaterm.api").new_term()
+      end)
     end,
   }
 })
