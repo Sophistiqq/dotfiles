@@ -51,3 +51,12 @@ map("n", "<C-Down>", "<C-w>j", { desc = "Move Down", noremap = true, silent = tr
 map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
+
+
+-- Flip true/false values when pressing leader ft
+map("n", "<leader>tf", function()
+  local word = vim.fn.expand("<cword>")
+  if word ~= "true" and word ~= "false" then return end
+
+  vim.cmd("normal! ciw" .. (word == "true" and "false" or "true"))
+end, { desc = "Toggle Boolean Value" })

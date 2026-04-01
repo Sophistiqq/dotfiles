@@ -6,7 +6,7 @@ require("everforest").setup({
 })
 
 
-local function set_colorscheme(name)
+function set_colorscheme(name)
   vim.cmd("colorscheme " .. name)
 
   -- save to file
@@ -33,3 +33,5 @@ vim.keymap.set("n", "<leader>th", function()
     end,
   })
 end, { desc = "[F]ind Colorscheme" })
+
+vim.cmd("colorscheme everforest")
