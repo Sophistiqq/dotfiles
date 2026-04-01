@@ -7,16 +7,16 @@ require("floaterm").setup({
   size = { h = 80, w = 90 },
   mappings = {
     term = function(buf)
-      vim.keymap.set({ "n", "t" }, "<C-Tab>", function()
+      vim.keymap.set({ "n", "t" }, "<M-2>", function()
         require("floaterm.api").cycle_term_bufs "prev"
       end, { buffer = buf })
 
-      vim.keymap.set({ "n", "t" }, "<C-n>", function()
+      vim.keymap.set({ "n", "t" }, "<M-1>", function()
         require("floaterm.api").new_term()
       end)
     end,
   }
 })
 
-vim.keymap.set("n", "<C-`>", ":FloatermToggle<CR>", { silent = true })
-vim.keymap.set("t", "<C-`>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true })
+vim.keymap.set("n", "<M-`>", ":FloatermToggle<CR>", { silent = true })
+vim.keymap.set("t", "<M-`>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true })

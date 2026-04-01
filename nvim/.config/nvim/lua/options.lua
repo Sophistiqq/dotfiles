@@ -21,6 +21,7 @@ o.clipboard = "unnamedplus"
 o.fillchars = { eob = " " }
 o.laststatus = 3
 o.whichwrap:append("<,>,h,l")
+o.timeout = true
 
 ----- [ Diagnostics ] -----
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
@@ -35,3 +36,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+
+g.clipboard = {
+  name = "clipboard-wsl",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  },
+  cache_enabled = 0,
+} 
+

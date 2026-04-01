@@ -7,7 +7,7 @@ map("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind Words" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind Help tags" })
 map("n", "<leader>fq", builtin.quickfix, { desc = "[F]ind Quickfix" })
 map("n", "<leader>fq", builtin.diagnostics, { desc = "[F]ind Diagnostics" })
-map("n", "<leader>th", builtin.colorscheme, { desc = "[F]ind Colorscheme" })
+
 
 map("n", "<C-Space>", builtin.buffers, { desc = "[F]ind Buffers" })
 map("n", "<Tab>", ":bn<CR>", { desc = "Next Buffer", silent = true, noremap = true })
@@ -27,6 +27,10 @@ map("v", "<leader>/", "gc", { remap = true, silent = true })
 
 -- NvimTree
 map("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { silent = true, noremap = true })
+
+-- NvimTree Resize that expects a number
+map("n", "<C-m>", ":NvimTreeResize +10<CR>", { silent = true, noremap = true })
+map("n", "<C-b>", ":NvimTreeResize -10<CR>", { silent = true, noremap = true })
 
 -- Close Buffer
 map("n", "<leader>x", ":bd<CR>", { desc = "Close Buffer", noremap = true, silent = true })

@@ -4,8 +4,8 @@ vim.pack.add({
 
 require('supermaven-nvim').setup({
   keymaps = {
-    accept_suggestion = "<M-CR>",
-    clear_suggestion = "<M-\\>"
+    accept_suggestion = "<C-f>",
+    clear_suggestion = "<C-\\>"
   },
   disable_inline_completion = false,
 })
