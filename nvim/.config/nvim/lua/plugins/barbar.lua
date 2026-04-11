@@ -7,10 +7,7 @@ require("barbar").setup({
   tabpages = true,
   maximum_padding = 1,
   sidebar_filetypes = {
-    NvimTree = {
-      text = 'File Explorer',
-      align = "left"
-    },
+    NvimTree = true,
   },
   icons = {
     gitsigns = {

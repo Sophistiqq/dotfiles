@@ -1,13 +1,15 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter",  },
 })
 
 require('nvim-treesitter').setup {
-  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
-  install_dir = vim.fn.stdpath('data') .. '/site',
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = true,
-  },
+  install_dir = vim.fn.stdpath('data') .. '/site'
 }
+
+require('nvim-treesitter').install { 'rust', 'javascript', 'zig', 'svelte', 'typescript' }
+
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'rust', 'javascript', 'zig', 'svelte', 'typescript' },
+  callback = function() vim.treesitter.start() end
+})

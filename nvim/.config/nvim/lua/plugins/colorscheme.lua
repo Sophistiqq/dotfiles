@@ -5,19 +5,17 @@ require("everforest").setup({
   transparent_background_level = 1,
 })
 
-
 function set_colorscheme(name)
   vim.cmd("colorscheme " .. name)
 
   -- save to file
-  local path = vim.fn.stdpath("config") .. "/configs.lua"
+  local path = vim.fn.stdpath("config") .. "/lua/.colorscheme"
   local file = io.open(path, "w")
   if file then
-    file:write('vim.cmd("colorscheme ' .. name .. '")')
+    file:write(name)
     file:close()
   end
 end
-
 
 -- Colorscheme
 vim.keymap.set("n", "<leader>th", function()
@@ -34,4 +32,17 @@ vim.keymap.set("n", "<leader>th", function()
   })
 end, { desc = "[F]ind Colorscheme" })
 
-vim.cmd("colorscheme everforest")
+-- Load saved colorscheme preference
+local colorscheme_file = vim.fn.stdpath("config") .. "/lua/.colorscheme"
+local f = io.open(colorscheme_file, "r")
+if f then
+  local saved = f:read("*l")
+  f:close()
+  if saved and saved ~= "" then
+    vim.cmd("colorscheme " .. saved)
+  else
+    vim.cmd("colorscheme everforest")
+  end
+else
+  vim.cmd("colorscheme everforest")
+end

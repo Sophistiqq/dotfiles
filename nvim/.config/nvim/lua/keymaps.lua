@@ -39,7 +39,7 @@ map("n", "<leader>x", ":bd<CR>", { desc = "Close Buffer", noremap = true, silent
 map("v", "<C-f>", "zf", { desc = "zf", noremap = true, silent = true })
 
 -- toggle relative number
-map("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number", noremap = true })
+map("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number", noremap = true, silent = true })
 
 
 -- Map C- left right up down to be the same as the arrow keys
