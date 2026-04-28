@@ -55,3 +55,4 @@ vim.keymap.set({ "n", "t" }, "<M-Left>", "<C-\\><C-n><C-w>h", { desc = "Move lef
 vim.keymap.set({ "n", "t" }, "<M-Right>", "<C-\\><C-n><C-w>l", { desc = "Move right" })
 vim.keymap.set({ "n", "t" }, "<M-Up>", "<C-\\><C-n><C-w>k", { desc = "Move up" })
 vim.keymap.set({ "n", "t" }, "<M-Down>", "<C-\\><C-n><C-w>j", { desc = "Move down" })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
