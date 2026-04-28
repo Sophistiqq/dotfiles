@@ -1,5 +1,6 @@
 vim.pack.add({
   { src = "https://github.com/neanias/everforest-nvim" },
+  { src = "https://github.com/folke/tokyonight.nvim" }
 })
 require("everforest").setup({
   transparent_background_level = 1,
