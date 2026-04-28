@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-tree/nvim-web-devicons" }, 
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
@@ -89,7 +89,7 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = colors.blue },      -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -118,16 +118,16 @@ ins_left {
     }
 
     local mode = vim.fn.mode(true)
-    return { fg = mode_color[mode] or mode_color[mode:sub(1,1)] }
+    return { fg = mode_color[mode] or mode_color[mode:sub(1, 1)] }
   end,
   padding = { right = 1 },
-}       
-
-ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
 }
+
+-- ins_left {
+--   -- filesize component
+--   'filesize',
+--   cond = conditions.buffer_not_empty,
+-- }
 
 ins_left {
   'filename',
@@ -181,7 +181,7 @@ ins_left {
 
 -- Add components to right sections
 ins_right {
-  'o:encoding', -- option component same as &encoding in viml
+  'o:encoding',       -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
   color = { fg = colors.green, gui = 'bold' },
@@ -190,7 +190,7 @@ ins_right {
 ins_right {
   'fileformat',
   fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
   color = { fg = colors.green, gui = 'bold' },
 }
 

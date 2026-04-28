@@ -56,6 +56,10 @@
       "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "https://github.com/mason-org/mason.nvim.git"
     },
+    "mini.nvim": {
+      "rev": "be81509b7160aa02264a59789164a2e1c4a6750a",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -111,6 +115,10 @@
     "precognition.nvim": {
       "rev": "06e4bfa339ddc55a49fd1adcbb403f6e0855c43b",
       "src": "https://github.com/tris203/precognition.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "roslyn.nvim": {
       "rev": "f2ec6ee6384c3b611ddc817b9e78b20cd0334bbb",

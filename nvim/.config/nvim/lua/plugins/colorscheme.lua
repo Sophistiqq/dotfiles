@@ -5,7 +5,7 @@ require("everforest").setup({
   transparent_background_level = 1,
 })
 
-function set_colorscheme(name)
+local function set_colorscheme(name)
   vim.cmd("colorscheme " .. name)
 
   -- save to file
