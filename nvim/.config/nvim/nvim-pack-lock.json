@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "auto-session": {
+      "rev": "62437532b38495551410b3f377bcf4aaac574ebe",
+      "src": "https://github.com/rmagatti/auto-session"
+    },
     "barbar.nvim": {
       "rev": "539d73def39c9172b4d4d769f14090e08f37b29d",
       "src": "https://github.com/romgrk/barbar.nvim"
@@ -8,6 +12,10 @@
       "rev": "a327b19a419347084074cce77f6cd074f54705ac",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "blink.lib": {
+      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "src": "https://github.com/saghen/blink.lib"
+    },
     "bufferline.nvim": {
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim"
@@ -15,6 +23,10 @@
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "dropbar.nvim": {
+      "rev": "f0a42bd92aa647e44221397723453403f5e20f16",
+      "src": "https://github.com/Bekaboo/dropbar.nvim"
     },
     "everforest": {
       "rev": "b03a03148c8b34c24c96960b93da9c8883d11f54",
@@ -43,6 +55,10 @@
     "lazygit.nvim": {
       "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
       "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
+    "lspkind.nvim": {
+      "rev": "c7274c48137396526b59d86232eabcdc7fed8a32",
+      "src": "https://github.com/onsails/lspkind.nvim"
     },
     "lualine.nvim": {
       "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
@@ -139,6 +155,10 @@
     "tabscope.nvim": {
       "rev": "cba52d18fbb1171cd92c7baf916e98fb720d6ae0",
       "src": "https://github.com/backdround/tabscope.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
     },
     "telescope.nvim": {
       "rev": "7ef4d6dccb78ee71e552bbd866176762ad328afa",
