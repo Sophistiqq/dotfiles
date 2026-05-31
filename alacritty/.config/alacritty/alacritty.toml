@@ -7,7 +7,7 @@ size = 9
 
 
 [window]
-padding = { x = 3, y = 5 }
+padding = { x = 0, y = 5 }
 opacity = 0.8
 blur = true
 dynamic_title = true
