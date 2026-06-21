@@ -5,6 +5,7 @@ vim.pack.add({
   { src = 'https://github.com/saghen/blink.cmp' },
 })
 local cmp = require('blink.cmp')
+cmp.build():pwait()
 cmp.setup({
   keymap = {
     preset = 'super-tab',
