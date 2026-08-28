@@ -5,8 +5,14 @@ local servers = {
   "html",
   "cssls",
   "emmet_language_server",
+<<<<<<< Updated upstream
   "rust_analyzer",
   "roslyn"
+=======
+  "qmlls",
+  "prismals",
+  "rust_analyzer",
+>>>>>>> Stashed changes
 }
 
 vim.lsp.config("rust_analyzer", {
