@@ -5,7 +5,8 @@ local servers = {
   "html",
   "cssls",
   "emmet_language_server",
-  "rust_analyzer"
+  "rust_analyzer",
+  "roslyn"
 }
 
 vim.lsp.config("rust_analyzer", {

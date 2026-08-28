@@ -25,3 +25,7 @@ set PATH $PATH /home/roi/.local/bin
 set -gx DOTNET_ROOT "/usr/share/dotnet/"
 # Tools
 set -gx PATH "$DOTNET_ROOT/tools" "$PATH"
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/roi/.local/bin" $PATH
