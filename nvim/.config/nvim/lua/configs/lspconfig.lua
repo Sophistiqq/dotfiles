@@ -75,12 +75,19 @@ if ok_mr then
   )
 end
 
--- Enable native Neovim 0.12/0.13 CodeLens (virtual lines; great for C# references & test lenses)
+-- Enable native Neovim 0.12/0.13 CodeLens, Inlay Hints & Inline Completion globally
+-- (Global scope avoids per-buffer state overriding <leader>ih and <leader>ai toggles!)
 if vim.lsp.codelens and vim.lsp.codelens.enable then
   vim.lsp.codelens.enable(true)
 end
+if vim.lsp.inlay_hint and vim.lsp.inlay_hint.enable then
+  vim.lsp.inlay_hint.enable(true)
+end
+if vim.lsp.inline_completion and vim.lsp.inline_completion.enable then
+  vim.lsp.inline_completion.enable(true)
+end
 
--- Enable inlay hints & native 0.12/0.13 inline completions per buffer on LspAttach
+-- Attach buffer-local keymaps for native 0.12/0.13 inline completions
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),
   callback = function(args)
@@ -89,14 +96,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       return
     end
 
-    if client:supports_method("textDocument/inlayHint", args.buf) then
-      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
-    end
-
-    -- Native Neovim 0.12/0.13 LSP inline completion (zero-plugin Copilot ghost text)
     if client:supports_method("textDocument/inlineCompletion", args.buf) then
-      vim.lsp.inline_completion.enable(true, { bufnr = args.buf })
-
       vim.keymap.set("i", "<C-f>", function()
         if not vim.lsp.inline_completion.get() then
           return "<C-f>"

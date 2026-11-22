@@ -115,6 +115,17 @@ local function toggle_lazygit()
   end)
 end
 
+-- Clean UI for all terminal buffers (hide term:// winbar, line numbers, signcolumn)
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("UserTerminalUI", { clear = true }),
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+    vim.wo.signcolumn = "no"
+    vim.wo.winbar = ""
+  end,
+})
+
 -- Terminal keybinds (works in both Normal and Terminal modes)
 local map = vim.keymap.set
 map({ "n", "t" }, "<M-`>", function() toggle_terminal("float") end, { desc = "Toggle float terminal" })
@@ -136,8 +147,16 @@ map("n", "<leader>gg", toggle_lazygit, { desc = "LazyGit UI" })
 -- Safe terminal exit (<Esc><Esc> preserves single <Esc> for lazygit, fzf, vi-mode shells)
 map("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
--- Seamless window navigation from terminal mode
+-- Seamless window navigation from terminal mode (hjkl + Ctrl/Alt arrows)
 map("t", "<C-h>", [[<C-\><C-n><C-w>h]], { desc = "Move left" })
 map("t", "<C-j>", [[<C-\><C-n><C-w>j]], { desc = "Move down" })
 map("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Move up" })
 map("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Move right" })
+map("t", "<C-Left>", [[<C-\><C-n><C-w>h]], { desc = "Move left" })
+map("t", "<C-Down>", [[<C-\><C-n><C-w>j]], { desc = "Move down" })
+map("t", "<C-Up>", [[<C-\><C-n><C-w>k]], { desc = "Move up" })
+map("t", "<C-Right>", [[<C-\><C-n><C-w>l]], { desc = "Move right" })
+map("t", "<M-Left>", [[<C-\><C-n><C-w>h]], { desc = "Move left" })
+map("t", "<M-Down>", [[<C-\><C-n><C-w>j]], { desc = "Move down" })
+map("t", "<M-Up>", [[<C-\><C-n><C-w>k]], { desc = "Move up" })
+map("t", "<M-Right>", [[<C-\><C-n><C-w>l]], { desc = "Move right" })

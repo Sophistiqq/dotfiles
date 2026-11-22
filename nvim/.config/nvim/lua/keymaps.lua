@@ -18,7 +18,9 @@ map("n", "<leader><leader>", tb("buffers"), { desc = "Find Buffers" })
 map("n", "<leader>fs", tb("lsp_document_symbols"), { desc = "Find Document Symbols" })
 map("n", "<leader>fS", tb("lsp_dynamic_workspace_symbols"), { desc = "Find Workspace Symbols" })
 
------ [ Buffers (uses Neovim native ]b / [b instead of <Tab>/<S-Tab> to preserve <C-i>) ] -----
+----- [ Buffers (<Tab>/<S-Tab> plus Neovim native ]b / [b) ] -----
+map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
 map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Close Buffer" })
 
 ----- [ Window Navigation (Windows + Linux safe across normal & terminal modes) ] -----
@@ -26,6 +28,14 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move Up" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Right" })
+map("n", "<C-Left>", "<C-w>h", { desc = "Move Left" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Move Down" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Move Up" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Move Right" })
+map("n", "<M-Left>", "<C-w>h", { desc = "Move Left" })
+map("n", "<M-Down>", "<C-w>j", { desc = "Move Down" })
+map("n", "<M-Up>", "<C-w>k", { desc = "Move Up" })
+map("n", "<M-Right>", "<C-w>l", { desc = "Move Right" })
 
 ----- [ File Explorer (NvimTree — avoids <C-m> which equals <CR> on Windows/ConPTY) ] -----
 map("n", "<C-n>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle File Explorer" })
@@ -55,7 +65,9 @@ map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "LSP Rename" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run LSP CodeLens (C# Tests/Refs)" })
 map("n", "<leader>ih", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  local next_state = not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+  vim.lsp.inlay_hint.enable(next_state)
+  vim.notify("Inlay hints " .. (next_state and "enabled" or "disabled"), vim.log.levels.INFO)
 end, { desc = "Toggle Inlay Hints" })
 
 ----- [ Session ] -----

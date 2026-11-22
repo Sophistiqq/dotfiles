@@ -149,6 +149,12 @@ vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
 })
 
 local function file_section()
+  if vim.bo.buftype == "terminal" then
+    local raw = vim.api.nvim_buf_get_name(0)
+    local prog = raw:match("([^:/\\]+)$") or "Terminal"
+    return "  %#StlAiCli#  %#StlFile#" .. prog
+  end
+
   local fname = vim.fn.expand("%:t")
   if fname == "" then
     return "%#StlMuted#  [No Name]"

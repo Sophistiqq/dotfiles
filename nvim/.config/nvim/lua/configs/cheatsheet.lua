@@ -57,8 +57,8 @@ local sections = {
     title = " 󰙅  Navigation & Explorer ",
     hl = "CsHeaderCyan",
     items = {
-      { "<C-h/j/k/l>", "Switch windows (N & Term)" },
-      { "]b / [b", "Next / prev buffer (native)" },
+      { "<C-h/j/k/l> / <C/M-Arrow>", "Switch panes (N & Term)" },
+      { "<Tab> / <S-Tab> / ]b [b", "Next / prev open buffer" },
       { "<leader>x", "Close current buffer" },
       { "<C-n> / <leader>ee", "Toggle NvimTree explorer" },
       { "<leader>e> / e<", "Widen / shrink NvimTree" },

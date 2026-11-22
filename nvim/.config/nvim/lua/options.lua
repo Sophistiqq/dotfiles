@@ -31,8 +31,30 @@ o.winborder = "single"
 o.pumborder = "single"
 o.smartindent = true
 o.clipboard = "unnamedplus"
-o.fillchars = { eob = " " }
+o.fillchars = {
+  eob = " ",
+  horiz = "─",
+  horizup = "┴",
+  horizdown = "┬",
+  vert = "│",
+  vertleft = "┤",
+  vertright = "├",
+  verthoriz = "┼",
+}
 o.laststatus = 3
+
+-- Crisp, theme-adaptive split pane separators (works cleanly with laststatus = 3 & transparency)
+local function set_win_separator()
+  local border = vim.api.nvim_get_hl(0, { name = "FloatBorder", link = false })
+  local comment = vim.api.nvim_get_hl(0, { name = "Comment", link = false })
+  local fg = (border and border.fg) or (comment and comment.fg) or "#5c6a72"
+  vim.api.nvim_set_hl(0, "WinSeparator", { fg = fg, bg = "NONE" })
+end
+set_win_separator()
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("UserWinSeparator", { clear = true }),
+  callback = set_win_separator,
+})
 o.showtabline = 2
 o.showmode = false -- Mode pill is rendered in the custom statusline
 o.whichwrap:append("<,>,h,l")
