@@ -1,24 +1,28 @@
 vim.pack.add({
   { src = "https://github.com/neanias/everforest-nvim" },
-  { src = "https://github.com/folke/tokyonight.nvim" }
+  { src = "https://github.com/folke/tokyonight.nvim" },
 })
+
 require("everforest").setup({
   transparent_background_level = 1,
 })
 
-local function set_colorscheme(name)
-  vim.cmd("colorscheme " .. name)
+local state_dir = vim.fn.stdpath("state")
+local colorscheme_file = vim.fs.joinpath(state_dir, "colorscheme")
 
-  -- save to file
-  local path = vim.fn.stdpath("config") .. "/lua/.colorscheme"
-  local file = io.open(path, "w")
+local function set_colorscheme(name)
+  local ok = pcall(vim.cmd.colorscheme, name)
+  if not ok then
+    return
+  end
+  vim.fs.mkdir(state_dir, { parents = true })
+  local file = io.open(colorscheme_file, "w")
   if file then
     file:write(name)
     file:close()
   end
 end
 
--- Colorscheme
 vim.keymap.set("n", "<leader>th", function()
   require("telescope.builtin").colorscheme({
     enable_preview = true,
@@ -26,24 +30,27 @@ vim.keymap.set("n", "<leader>th", function()
       map("i", "<CR>", function(prompt_bufnr)
         local selection = require("telescope.actions.state").get_selected_entry()
         require("telescope.actions").close(prompt_bufnr)
-        set_colorscheme(selection.value)
+        if selection and selection.value then
+          set_colorscheme(selection.value)
+        end
       end)
       return true
     end,
   })
-end, { desc = "[F]ind Colorscheme" })
+end, { desc = "Find Colorscheme" })
 
--- Load saved colorscheme preference
-local colorscheme_file = vim.fn.stdpath("config") .. "/lua/.colorscheme"
+-- Load saved colorscheme preference from stdpath("state")
+local saved = nil
 local f = io.open(colorscheme_file, "r")
 if f then
-  local saved = f:read("*l")
+  saved = f:read("*l")
   f:close()
-  if saved and saved ~= "" then
-    vim.cmd("colorscheme " .. saved)
-  else
-    vim.cmd("colorscheme everforest")
+end
+
+if saved and saved ~= "" then
+  if not pcall(vim.cmd.colorscheme, saved) then
+    vim.cmd.colorscheme("everforest")
   end
 else
-  vim.cmd("colorscheme everforest")
+  vim.cmd.colorscheme("everforest")
 end

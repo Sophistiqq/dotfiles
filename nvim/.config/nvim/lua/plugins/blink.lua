@@ -1,28 +1,27 @@
 -- [ Blink ] --
-
+-- Native library build is triggered only on install/update via PackChanged in init.lua
 vim.pack.add({
-  { src = 'https://github.com/saghen/blink.lib' },
-  { src = 'https://github.com/saghen/blink.cmp' },
+  { src = "https://github.com/saghen/blink.lib" },
+  { src = "https://github.com/saghen/blink.cmp" },
 })
-local cmp = require('blink.cmp')
-cmp.build():pwait()
-cmp.setup({
+
+require("blink.cmp").setup({
   keymap = {
-    preset = 'super-tab',
+    preset = "super-tab",
   },
   appearance = {
-    nerd_font_variant = 'mono'
+    nerd_font_variant = "mono",
   },
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = { "lsp", "path", "snippets", "buffer" },
   },
   completion = {
     documentation = { auto_show = true },
   },
   signature = { enabled = true },
   cmdline = {
-    keymap = { preset = 'inherit' },
+    keymap = { preset = "inherit" },
     completion = { menu = { auto_show = true } },
   },
-  fuzzy = { implementation = "prefer_rust_with_warning" }
+  fuzzy = { implementation = "prefer_rust_with_warning" },
 })

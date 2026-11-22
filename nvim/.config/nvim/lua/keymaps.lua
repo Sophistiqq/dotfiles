@@ -1,60 +1,73 @@
 local map = vim.keymap.set
 
--- Telescope
-local builtin = require('telescope.builtin')
-map("n", "<leader>ff", builtin.find_files, { desc = "[F]ind Files" })
-map("n", "<leader>fw", builtin.live_grep, { desc = "[F]ind Words" })
-map("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind Help tags" })
-map("n", "<leader>fq", builtin.quickfix, { desc = "[F]ind Quickfix" })
-map("n", "<leader>fq", builtin.diagnostics, { desc = "[F]ind Diagnostics" })
+----- [ Telescope (lazy-required to keep startup fast) ] -----
+local function tb(fn)
+  return function()
+    require("telescope.builtin")[fn]()
+  end
+end
 
+map("n", "<leader>ff", tb("find_files"), { desc = "Find Files" })
+map("n", "<leader>fw", tb("live_grep"), { desc = "Find Words (Grep)" })
+map("n", "<leader>fh", tb("help_tags"), { desc = "Find Help Tags" })
+map("n", "<leader>fk", tb("keymaps"), { desc = "Find Keymaps (Fuzzy)" })
+map("n", "<leader>fq", tb("quickfix"), { desc = "Find Quickfix" })
+map("n", "<leader>fd", tb("diagnostics"), { desc = "Find Diagnostics" })
+map("n", "<leader>fb", tb("buffers"), { desc = "Find Buffers" })
+map("n", "<leader><leader>", tb("buffers"), { desc = "Find Buffers" })
+map("n", "<leader>fs", tb("lsp_document_symbols"), { desc = "Find Document Symbols" })
+map("n", "<leader>fS", tb("lsp_dynamic_workspace_symbols"), { desc = "Find Workspace Symbols" })
 
-map("n", "<C-Space>", builtin.buffers, { desc = "[F]ind Buffers" })
-map("n", "<Tab>", ":bn<CR>", { desc = "Next Buffer", silent = true, noremap = true })
-map("n", "<S-Tab>", ":bp<CR>", { desc = "Previous Buffer", silent = true, noremap = true })
+----- [ Buffers (uses Neovim native ]b / [b instead of <Tab>/<S-Tab> to preserve <C-i>) ] -----
+map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Close Buffer" })
 
+----- [ Window Navigation (Windows + Linux safe across normal & terminal modes) ] -----
+map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move Up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move Right" })
 
--- Quality of Life
-map("n", "<C-s>", ":w<CR>", { silent = true, noremap = true })
-map("n", ";", ":", { silent = true, noremap = true })
-map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Rename" })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", noremap = true })
-map("n", "<leader>gt", ":LazyGit<CR>", { desc = "LazyGit UI", noremap = true })
-map("n", "<M-z>", ":set wrap!<CR>", { desc = "Toggle Wrap", noremap = true, silent = true })
-map("n", "<Esc>", ":noh<CR><Esc>", { desc = "Clear Highlight", noremap = true, silent = true })
-map("n", "<leader>/", "gcc", { desc = "Comment selection", remap = true, silent = true })
-map("v", "<leader>/", "gc", { desc = "Comment selection", remap = true, silent = true })
-map("v", "<leader>f", "zf", { desc = "Fold selection", noremap = true, silent = true })
+----- [ File Explorer (NvimTree — avoids <C-m> which equals <CR> on Windows/ConPTY) ] -----
+map("n", "<C-n>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle File Explorer" })
+map("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle File Explorer" })
+map("n", "<leader>e>", "<cmd>NvimTreeResize +10<CR>", { desc = "Widen Explorer" })
+map("n", "<leader>e<", "<cmd>NvimTreeResize -10<CR>", { desc = "Shrink Explorer" })
 
--- NvimTree
-map("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { silent = true, noremap = true })
+----- [ Quality of Life ] -----
+map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save File" })
+map("n", ";", ":", { desc = "Command Mode" })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear Search Highlight" })
+map("n", "<leader>/", "gcc", { desc = "Toggle Line Comment", remap = true })
+map("v", "<leader>/", "gc", { desc = "Toggle Selection Comment", remap = true })
+map("v", "<leader>f", "zf", { desc = "Fold Selection" })
 
--- NvimTree Resize that expects a number
-map("n", "<C-m>", ":NvimTreeResize +10<CR>", { silent = true, noremap = true })
-map("n", "<C-b>", ":NvimTreeResize -10<CR>", { silent = true, noremap = true })
+----- [ UI & Built-in Neovim 0.12 / 0.13 Toggles ] -----
+map("n", "<leader>uw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap" })
+map("n", "<leader>rn", "<cmd>set relativenumber!<CR>", { desc = "Toggle Relative Number" })
+map("n", "<leader>uu", "<cmd>Undotree<CR>", { desc = "Toggle Built-in Undotree" })
+map("n", "<leader>uf", function()
+  vim.g.autoformat_enabled = not vim.g.autoformat_enabled
+  vim.notify("Autoformat " .. (vim.g.autoformat_enabled and "enabled" or "disabled"), vim.log.levels.INFO)
+end, { desc = "Toggle Format on Save" })
 
--- Close Buffer
-map("n", "<leader>x", ":bd<CR>", { desc = "Close Buffer", noremap = true, silent = true })
-
--- toggle relative number
-map("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number", noremap = true, silent = true })
-
-
--- Map C- left right up down to be the same as the arrow keys
-map("n", "<C-Left>", "<C-w>h", { desc = "Move Left", noremap = true, silent = true })
-map("n", "<C-Right>", "<C-w>l", { desc = "Move Right", noremap = true, silent = true })
-map("n", "<C-Up>", "<C-w>k", { desc = "Move Up", noremap = true, silent = true })
-map("n", "<C-Down>", "<C-w>j", { desc = "Move Down", noremap = true, silent = true })
-
+----- [ LSP (native 0.11+ grn/gra/grr/gri/grt/grx/gO also active) ] -----
+map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "LSP Rename" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run LSP CodeLens (C# Tests/Refs)" })
 map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay hints" })
+end, { desc = "Toggle Inlay Hints" })
 
+----- [ Session ] -----
+map("n", "<leader>ss", "<cmd>SessionSave<CR>", { desc = "Save Session" })
+map("n", "<leader>sr", "<cmd>SessionRestore<CR>", { desc = "Restore Session" })
+map("n", "<leader>sd", "<cmd>SessionDelete<CR>", { desc = "Delete Session" })
 
--- Flip true/false values when pressing leader ft
+----- [ Flip true/false value under cursor ] -----
 map("n", "<leader>tf", function()
   local word = vim.fn.expand("<cword>")
-  if word ~= "true" and word ~= "false" then return end
-
+  if word ~= "true" and word ~= "false" then
+    return
+  end
   vim.cmd("normal! ciw" .. (word == "true" and "false" or "true"))
 end, { desc = "Toggle Boolean Value" })
