@@ -39,13 +39,22 @@ local function toggle_terminal(kind)
     vim.cmd("botright vsplit")
     t.win = vim.api.nvim_get_current_win()
     vim.api.nvim_win_set_buf(t.win, t.buf)
-    -- 0.13+: nvim_win_resize replaces deprecated nvim_win_set_width
-    vim.api.nvim_win_resize(t.win, math.floor(vim.o.columns * 0.35), -1)
+    local w = math.floor(vim.o.columns * 0.35)
+    if vim.api.nvim_win_resize then
+      vim.api.nvim_win_resize(t.win, w, -1)
+    else
+      vim.api.nvim_win_set_width(t.win, w)
+    end
   else
     vim.cmd("botright split")
     t.win = vim.api.nvim_get_current_win()
     vim.api.nvim_win_set_buf(t.win, t.buf)
-    vim.api.nvim_win_resize(t.win, -1, math.floor(vim.o.lines * 0.3))
+    local h = math.floor(vim.o.lines * 0.3)
+    if vim.api.nvim_win_resize then
+      vim.api.nvim_win_resize(t.win, -1, h)
+    else
+      vim.api.nvim_win_set_height(t.win, h)
+    end
   end
 
   if vim.bo[t.buf].buftype ~= "terminal" then
@@ -106,13 +115,17 @@ local function toggle_lazygit()
   end)
 end
 
--- Windows- & Linux-compatible terminal keybinds
+-- Terminal keybinds (works in both Normal and Terminal modes)
 local map = vim.keymap.set
+map({ "n", "t" }, "<M-`>", function() toggle_terminal("float") end, { desc = "Toggle float terminal" })
+map({ "n", "t" }, "<M-v>", function() toggle_terminal("vsplit") end, { desc = "Toggle vsplit terminal" })
+map({ "n", "t" }, "<M-h>", function() toggle_terminal("split") end, { desc = "Toggle split terminal" })
+
 map("n", "<leader>tt", function() toggle_terminal("float") end, { desc = "Toggle float terminal" })
 map("n", "<leader>tv", function() toggle_terminal("vsplit") end, { desc = "Toggle vsplit terminal" })
 map("n", "<leader>ts", function() toggle_terminal("split") end, { desc = "Toggle split terminal" })
 
--- Ctrl+/ (Linux/macOS sends <C-/>, Windows Terminal/ConPTY sends <C-_>)
+-- Ctrl+/ fallback (Linux/macOS sends <C-/>, Windows Terminal/ConPTY sends <C-_>)
 map({ "n", "t" }, "<C-/>", function() toggle_terminal("float") end, { desc = "Toggle float terminal" })
 map({ "n", "t" }, "<C-_>", function() toggle_terminal("float") end, { desc = "Toggle float terminal" })
 

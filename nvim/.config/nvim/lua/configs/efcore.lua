@@ -336,7 +336,11 @@ end
 
 local function save_state(root, cfg)
   local dir, file = state_path(root)
-  vim.fs.mkdir(dir, { parents = true })
+  if vim.fs.mkdir then
+    vim.fs.mkdir(dir, { parents = true })
+  else
+    vim.fn.mkdir(dir, "p")
+  end
   local f = io.open(file, "w")
   if f then
     f:write(vim.json.encode(cfg))

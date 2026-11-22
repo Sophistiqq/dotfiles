@@ -15,7 +15,11 @@ local function set_colorscheme(name)
   if not ok then
     return
   end
-  vim.fs.mkdir(state_dir, { parents = true })
+  if vim.fs.mkdir then
+    vim.fs.mkdir(state_dir, { parents = true })
+  else
+    vim.fn.mkdir(state_dir, "p")
+  end
   local file = io.open(colorscheme_file, "w")
   if file then
     file:write(name)

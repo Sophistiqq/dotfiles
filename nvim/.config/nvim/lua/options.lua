@@ -51,8 +51,10 @@ o.splitright = true
 o.splitbelow = true
 o.scrolloff = 4
 o.termguicolors = true
-o.shortmess:append("u") -- 0.13: silence undo/redo messages
-o.messagesopt:append("pager:<CR>,timeout:4000") -- 0.13: ui2 pager key & message timeout
+if vim.fn.has("nvim-0.13") == 1 then
+  pcall(function() o.shortmess:append("u") end) -- 0.13: silence undo/redo messages
+  pcall(function() o.messagesopt:append("pager:<CR>,timeout:4000") end) -- 0.13: ui2 pager key & timeout
+end
 o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 ----- [ Diagnostics ] -----

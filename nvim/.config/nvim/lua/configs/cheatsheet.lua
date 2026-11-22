@@ -70,9 +70,9 @@ local sections = {
     title = " 󰆍  Terminal & Git (Native) ",
     hl = "CsHeaderYellow",
     items = {
-      { "<C-/> / <leader>tt", "Toggle floating terminal" },
-      { "<leader>tv", "Toggle vertical terminal" },
-      { "<leader>ts", "Toggle split terminal" },
+      { "<M-`> / <C-/> / <Spc>tt", "Toggle float term (N & T)" },
+      { "<M-v> / <leader>tv", "Toggle vsplit term (N & T)" },
+      { "<M-h> / <leader>ts", "Toggle split term (N & T)" },
       { "<leader>gg / gt", "Toggle floating LazyGit" },
       { "<Esc><Esc> (Term)", "Exit terminal mode safely" },
     },

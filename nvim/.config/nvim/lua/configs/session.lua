@@ -21,7 +21,11 @@ local function save_session()
   if not has_real_buffers() then
     return
   end
-  vim.fs.mkdir(session_dir, { parents = true })
+  if vim.fs.mkdir then
+    vim.fs.mkdir(session_dir, { parents = true })
+  else
+    vim.fn.mkdir(session_dir, "p")
+  end
   vim.cmd("silent! mksession! " .. vim.fn.fnameescape(session_file()))
 end
 
